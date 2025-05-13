@@ -25,9 +25,12 @@ class Fixme
       old_comment = source[loc.start_offset, loc.length]
 
       if old_comment.match(/\A#\s*FIXME (\d{4}-\d\d-\d\d): (.+)/)
+        string = "I could be made to raise #{$2.inspect} from #{$1}."
+
         added_code = <<~RUBY
-          puts %{I could be made to raise '\#{#{$2.inspect}}' from #{$1}.}
+          puts #{string.inspect}
         RUBY
+
         new_source[loc.start_offset + loc.length, 0] = "\n#{added_code}"
       end
     end
