@@ -1,6 +1,6 @@
 # Ruby Prism metaprogramming playground
 
-Using [Prism](https://ruby.github.io/prism/rb/index.html) and [require-hooks](https://github.com/ruby-next/require-hooks), inspired by [strict\_ivars](github.com/joeldrapper/strict_ivars).
+Using [Prism](https://ruby.github.io/prism/rb/index.html) and [require-hooks](https://github.com/ruby-next/require-hooks), inspired by [strict\_ivars](https://github.com/yippee-fun/strict_ivars).
 
 ``` bash
 gem install prism require-hooks
