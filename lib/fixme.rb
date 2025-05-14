@@ -19,8 +19,7 @@ class Fixme
     new_source = source.dup
 
     Prism.parse_comments(source).reverse_each do |comment|
-      loc = comment.location
-      old_comment = loc.slice
+      old_comment = comment.slice
 
       if old_comment.match(/\A#\s*FIXME (\d{4}-\d\d-\d\d): (.+)/)
         string = "I could be made to raise #{$2.inspect} from #{$1}."
@@ -29,6 +28,7 @@ class Fixme
           puts #{string.inspect}
         RUBY
 
+        loc = comment.location
         new_source.insert(loc.end_offset, "\n#{added_code}")
       end
     end
